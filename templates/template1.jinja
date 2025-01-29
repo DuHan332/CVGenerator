@@ -1,0 +1,69 @@
+\documentclass[]{deedy-resume-reversed}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\begin{document}
+
+\namesection{((( name )))}{ 
+    \href{mailto:((( email )))}{((( email )))} 
+    | 
+    \href{tel:((( phone )))}{((( phone )))} 
+}
+
+\begin{minipage}[t]{0.60\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     WORK EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+
+\runsubsection{((( job_company1 )))} 
+\descript{| ((( job_title1 )))} 
+\location{((( job_date_range1 ))) | ((( job_location1 )))} 
+\begin{tightemize}
+    \item ((( job_desc_item1 )))
+    \item ((( job_desc_item2 )))
+    \item ((( job_desc_item3 )))
+\end{tightemize}
+\sectionsep
+
+\runsubsection{((( job_company2 )))} 
+\descript{| ((( job_title2 )))} 
+\location{((( job_date_range2 ))) | ((( job_location2 )))} 
+\begin{tightemize}
+    \item ((( job_desc_item4 )))
+    \item ((( job_desc_item5 )))
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\runsubsection{((( project1_name )))} 
+\descript{| ((( project1_description )))} 
+\location{((( project1_dates ))) | ((( project1_location )))} 
+\begin{tightemize}
+    \item ((( project1_bullet )))
+\end{tightemize}
+\sectionsep
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+
+\section{Education}
+\subsection{((( university_name )))} 
+\descript{((( degree_info )))} 
+\location{((( graduation_date ))) | ((( university_location )))} 
+\sectionsep
+
+\section{Skills}
+((( skills_text )))
+\sectionsep
+
+\end{minipage}
+\end{document}
