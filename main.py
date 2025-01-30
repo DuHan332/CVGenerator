@@ -65,7 +65,16 @@ if __name__ == '__main__':
     # Example data dictionary
     data_dict = {
         'name': 'Alice',
-        'years': 27
+        'years': 27,
+        'email': 'zxcvbnm@asdf.com',
+        'phone': '123456789',
+        'job_company1': 'Github',
+        'job_title1': 'software engineer',
+        'job_date_range1': 'Aug 2001 - Sep 2005',
+        'job_location1': 'Moon',
+        'job_desc_item1': 'job desc item1',
+        'job_desc_item2': 'job desc item2',
+        'job_desc_item3': 'job desc item3',
     }
 
     pdf_file = generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf')
