@@ -2,7 +2,7 @@ import os
 import subprocess
 from jinja2 import Environment, FileSystemLoader
 
-def generate_pdf(data, template_file='template1.jinja', output_pdf_name='output.pdf'):
+def generate_pdf(data, template_file='template1.jinja', output_pdf_name='output.pdf', replace = False):
     """
     Renders a LaTeX Jinja template from the 'templates' folder and compiles it to PDF.
     """
@@ -35,8 +35,11 @@ def generate_pdf(data, template_file='template1.jinja', output_pdf_name='output.
 
     # 6. Rename the generated PDF to your desired output name
     if os.path.exists('templates/temp_output.pdf'):
-        output_pdf_name = create_new_file_name(output_pdf_name)
-        os.rename('templates/temp_output.pdf', output_pdf_name)
+        if (replace):
+            os.replace('templates/temp_output.pdf', output_pdf_name)
+        else:
+            output_pdf_name = create_new_file_name(output_pdf_name)
+            os.rename('templates/temp_output.pdf', output_pdf_name)
 
     # 7. Clean up auxiliary files if desired
     for ext in ['.aux', '.log', '.out', '.tex']:
@@ -64,8 +67,7 @@ def create_new_file_name(new_pdf):
 if __name__ == '__main__':
     # Example data dictionary
     data_dict = {
-        'name': 'Alice',
-        'years': 27,
+        'name': 'Tom',
         'email': 'zxcvbnm@asdf.com',
         'phone': '123456789',
         'job_company1': 'Github',
@@ -77,5 +79,5 @@ if __name__ == '__main__':
         'job_desc_item3': 'job desc item3',
     }
 
-    pdf_file = generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf')
+    pdf_file = generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf', replace=False)
     print("PDF generated:", pdf_file)
