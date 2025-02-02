@@ -8,8 +8,8 @@ def _generate_pdf():
     if name: data_dict['name'] = name
     if email: data_dict['email'] = email
     if phone: data_dict['phone'] = phone
-    
-    generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf', replace=True)
+    filename = f"{name}_cv.pdf" if name else "new_cv.pdf"
+    generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name=filename, replace=False)
 
 
 if __name__ == '__main__':
@@ -32,7 +32,6 @@ if __name__ == '__main__':
     
     input_frame = tk.Frame(root)
     input_frame.grid(row=0, column=0)
-    
     
     name_label = tk.Label(input_frame, text = "Name:")
     name_label.grid(row=0, column=0)
