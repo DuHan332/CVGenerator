@@ -79,5 +79,5 @@ if __name__ == '__main__':
         'job_desc_item3': 'job desc item3',
     }
 
-    pdf_file = generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf', replace=False)
+    pdf_file = generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name='example_output.pdf', replace=True)
     print("PDF generated:", pdf_file)
