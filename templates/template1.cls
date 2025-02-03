@@ -26,13 +26,6 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
-% ------------------------------------------------------------------
-% Remove the following lines that load fontspec and set custom fonts:
-%   \usepackage{fontspec}
-%   \setmainfont[...]...
-%   \setsansfont[...]...
-% ------------------------------------------------------------------
-
 % Instead, for pdfLaTeX, load standard LaTeX font packages:
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -42,8 +35,8 @@
 \usepackage[UKenglish]{isodate}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
-\newcommand{\lastupdated}{%
-  \begin{textblock}{60}(155,5)
+\newcommand{\lastupdated}{
+  %\begin{textblock}{60}(155,5)
     \color{date}\small
     Last Updated on \today
   \end{textblock}%
@@ -57,7 +50,7 @@
   \centering{
     \color{headings}\fontsize{11pt}{14pt}\selectfont #2
   }
-  \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+  \noindent\makebox[\linewidth]{ \color{headings}\rule{\paperwidth}{0.4pt}}
   \vspace{-15pt}
 }
 
@@ -92,12 +85,17 @@
 % Location
 \newcommand{\location}[1]{%
   \color{subheadings}\raggedright\fontsize{10pt}{12pt}\selectfont
-  {#1\\} \normalfont
+  {#1} \normalfont
 }
 
 % Bullet lists with fewer gaps
 \newenvironment{tightemize}{
   \vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt
-}{
+}
+{
   \end{itemize}\vspace{-\topsep}
+}
+
+\newcommand{\customheading}[1]{%
+  {\color{headings}\scshape\fontsize{16pt}{24pt}\selectfont\raggedright\uppercase{#1}\par\vspace{0.2em}}%
 }

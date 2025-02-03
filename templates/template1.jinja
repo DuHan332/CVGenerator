@@ -13,29 +13,20 @@
 
 \begin{minipage}[t]{0.60\textwidth}
 
-\section{Experience}
-
-\runsubsection{((( job_company1 )))} 
-\descript{| ((( job_title1 )))} 
-\location{((( job_date_range1 ))) | ((( job_location1 )))} 
-\vspace{1em}
+\customheading{Experience}
+((%- for job in jobs -%))
+\runsubsection{((( job.company )))}
+\descript{| ((( job.title )))} 
+\location{((( job.date_range ))) | ((( job.location )))}
 \begin{tightemize}
-    \item ((( job_desc_item1 )))
-    \item ((( job_desc_item2 )))
-    \item ((( job_desc_item3 )))
+    ((%- for desc_item in job.desc_items -%))
+    \item ((( desc_item )))
+    ((%- endfor -%))
 \end{tightemize}
 \sectionsep
+((%- endfor -%))
 
-\runsubsection{((( job_company2 )))} 
-\descript{| ((( job_title2 )))} 
-\location{((( job_date_range2 ))) | ((( job_location2 )))} 
-\begin{tightemize}
-    \item ((( job_desc_item4 )))
-    \item ((( job_desc_item5 )))
-\end{tightemize}
-\sectionsep
-
-\section{Projects}
+\customheading{Projects}
 \runsubsection{((( project1_name )))} 
 \descript{| ((( project1_description )))} 
 \location{((( project1_dates ))) | ((( project1_location )))} 
@@ -48,13 +39,13 @@
 \hfill
 \begin{minipage}[t]{0.33\textwidth}
 
-\section{Education}
+\customheading{Education}
 \subsection{((( university_name )))} 
 \descript{((( degree_info )))} 
 \location{((( graduation_date ))) | ((( university_location )))} 
 \sectionsep
 
-\section{Skills}
+\customheading{Skills}
 ((( skills_text )))
 \sectionsep
 
