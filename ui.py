@@ -9,7 +9,7 @@ def _generate_pdf():
     if email: data_dict['email'] = email
     if phone: data_dict['phone'] = phone
     filename = f"{name}_cv.pdf" if name else "new_cv.pdf"
-    generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name=filename, replace=False)
+    generate_pdf(data_dict, template_file='template1.jinja', output_pdf_name=filename, replace=True)
 
 
 if __name__ == '__main__':
@@ -18,13 +18,41 @@ if __name__ == '__main__':
         'name': 'Tom',
         'email': 'zxcvbnm@asdf.com',
         'phone': '123456789',
-        'job_company1': 'Github',
-        'job_title1': 'software engineer',
-        'job_date_range1': 'Aug 2001 - Sep 2005',
-        'job_location1': 'Moon',
-        'job_desc_item1': 'job desc item1',
-        'job_desc_item2': 'job desc item2',
-        'job_desc_item3': 'job desc item3',
+        'jobs': [
+        {
+            'company': 'Github',
+            'title': 'software engineer',
+            'date_range': 'Aug 2001 - Sep 2005',
+            'location': 'Moon',
+            'desc_items': [
+                'job desc item1',
+                'job desc item2',
+                'job desc item3'
+            ]
+        },
+        {
+            'company': 'Github',
+            'title': 'software engineer',
+            'date_range': 'Aug 2001 - Sep 2005',
+            'location': 'Moon',
+            'desc_items': [
+                'job desc item1',
+                'job desc item2',
+                'job desc item3'
+            ]
+        },
+        {
+            'company': 'Another Company',
+            'title': 'another title',
+            'date_range': 'Sep 2005 - Dec 2010',
+            'location': 'Earth',
+            'desc_items': [
+                'job desc item4',
+                'job desc item5',
+                'job desc item6',
+            ]
+        }
+    ]
     }
     
     root = tk.Tk()

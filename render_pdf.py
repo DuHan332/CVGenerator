@@ -16,7 +16,9 @@ def generate_pdf(data, template_file='template1.jinja', output_pdf_name='output.
         variable_start_string='(((',
         variable_end_string=')))',
         comment_start_string='((#',
-        comment_end_string='#))'
+        comment_end_string='#))',
+        trim_blocks=True,      # Automatically remove newline after a block
+        lstrip_blocks=True 
     )
 
     # 2. Load the specified template
